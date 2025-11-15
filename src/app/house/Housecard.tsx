@@ -26,7 +26,7 @@ const Housecard: React.FC<HousecardProps> = ({ place }) => {
         <img
           src={place.image}
           alt={place.title}
-          className={`${place.id === 1 ? 'w-3/4 mx-auto' : 'w-full'} h-full object-cover hover:scale-105 transition-transform duration-300`}
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         />
       </div>
 
