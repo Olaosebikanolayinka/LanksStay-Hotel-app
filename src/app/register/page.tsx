@@ -5,10 +5,13 @@ import { Eye, EyeOff} from "lucide-react";
 import Link from "next/link";
 import InputField from "../Components/Inputfield";
 import TextareaField from "../Components/TextArea";
+import Modal from "../Components/Modal";
+import AccountCreated from "../Components/AccountCreated";
 
 
 const Register: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 md:p-6">
@@ -60,25 +63,26 @@ const Register: React.FC = () => {
             <TextareaField label="Facilities" placeholder="Describe" />
 
 
-         <Link href="/login">
             <button
-              type="submit"
+              type="button"
+              onClick={() => setModalOpen(true)}
               className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
             >
               Register
             </button>
-            </Link>
-          
 
             <p className="text-center text-sm text-gray-600 mt-2">
               <Link href="/login" className="text-blue-600">
-              
                 Login
               </Link>
             </p>
           </form>
         </div>
       </div>
+
+      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
+        <AccountCreated />
+      </Modal>
     </div>
   );
 };

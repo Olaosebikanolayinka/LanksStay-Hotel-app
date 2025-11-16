@@ -4,9 +4,12 @@ import { useState } from "react";
 import Link from 'next/link'
 import InputField from "../Components/Inputfield";
 import { Eye, EyeOff} from "lucide-react";
+import Modal from "../Components/Modal";
+import AccountCreated from "../Components/AccountCreated";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-50 px-4 sm:px-6 lg:px-20 py-10">
@@ -62,15 +65,19 @@ const LoginPage = () => {
             </p>
             
             <div className="space-y-3">
-              <Link href="../dashboard" className="w-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 sm:py-3 rounded-md transition">
+              <button onClick={() => setModalOpen(true)} className="w-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 sm:py-3 rounded-md transition">
                 Login
-              </Link>
+              </button>
 
               <Link href="../register" className="w-full flex items-center justify-center bg-white border border-blue-600 text-blue-600 font-semibold py-2.5 sm:py-3 rounded-md hover:bg-blue-50 transition">
                 Sign up
               </Link>
             </div>
           </form>
+
+          <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
+            <AccountCreated />
+          </Modal>
 
           
           
