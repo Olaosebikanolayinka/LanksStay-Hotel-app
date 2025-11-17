@@ -40,7 +40,7 @@ const DetailsPage = () => {
       <Navbar />
 
       {/* Breadcrumb + Title */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6 px-4 sm:px-8 md:px-16 pt-10 text-gray-600 text-sm">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 px-4 sm:px-6 md:px-8 lg:px-16 pt-6 md:pt-10 text-gray-600 text-xs sm:text-sm">
         <div className="flex items-center gap-2 text-center md:text-left">
           <p>Home</p>
           <p>/</p>
@@ -48,40 +48,40 @@ const DetailsPage = () => {
         </div>
 
         <div className="text-center w-full">
-  <h2 className="text-[#152C5B] font-bold text-2xl md:text-3xl">Blue Origin Fams</h2>
-  <p className="text-gray-500 text-sm">Galle, Sri Lanka</p>
+  <h2 className="text-[#152C5B] font-bold text-xl sm:text-2xl md:text-3xl">Blue Origin Fams</h2>
+  <p className="text-gray-500 text-xs sm:text-sm">Galle, Sri Lanka</p>
 </div>
       </div>
 
       {/* Image Gallery */}
-      <div className="flex flex-col md:flex-row gap-4 px-4 sm:px-8 md:px-16 py-8">
-        <div className="md:w-2/3">
+      <div className="flex flex-col md:flex-row gap-3 sm:gap-4 px-4 sm:px-6 md:px-8 lg:px-16 py-6 sm:py-8">
+        <div className="w-full md:w-2/3">
           <img
             src="/Blueorigin-1.png"
             alt="Main villa view"
-            className="rounded-2xl object-cover w-full h-auto"
+            className="rounded-2xl object-cover w-full h-auto aspect-video"
           />
         </div>
 
-        <div className="md:w-1/3 flex flex-col gap-4">
+        <div className="w-full md:w-1/3 flex flex-col gap-3 sm:gap-4">
           <img
             src="/Blueorigin-2.png"
             alt="Interior view"
-            className="rounded-2xl object-cover w-full h-1/2"
+            className="rounded-2xl object-cover w-full h-auto aspect-square md:aspect-video"
           />
           <img
             src="/Blueorigin-3.png"
             alt="Bathroom view"
-            className="rounded-2xl object-cover w-full h-1/2"
+            className="rounded-2xl object-cover w-full h-auto aspect-square md:aspect-video"
           />
         </div>
       </div>
 
       {/* About + Booking */}
-      <div className="flex flex-col lg:flex-row gap-10 px-4 sm:px-8 md:px-16 mt-10 justify-between items-start">
+      <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-10 px-4 sm:px-6 md:px-8 lg:px-16 mt-8 md:mt-10 justify-between items-start">
         {/* About Section */}
-        <div className="flex-1">
-          <h3 className="text-2xl font-bold text-[#152C5B] mb-4">About the place</h3>
+        <div className="w-full lg:flex-1">
+          <h3 className="text-xl sm:text-2xl font-bold text-[#152C5B] mb-4">About the place</h3>
           <p className="text-gray-600 leading-7 text-sm md:text-base mb-4">
             Minimal techno is a minimalist subgenre of techno music. It is characterized by a stripped-down aesthetic that exploits the use of repetition and understated development.
           </p>
@@ -91,15 +91,15 @@ const DetailsPage = () => {
         </div>
 
         {/* Booking Card */}
-        <div className="w-full lg:w-[400px] border-2 border-gray-200 rounded-2xl p-6 flex flex-col gap-6 shadow-sm">
-          <p className="text-[#152C5B] font-bold text-lg">Start Booking</p>
+        <div className="w-full lg:w-80 border-2 border-gray-200 rounded-2xl p-4 sm:p-6 flex flex-col gap-4 sm:gap-6 shadow-sm">
+          <p className="text-[#152C5B] font-bold text-base sm:text-lg">Start Booking</p>
           <p>
-            <span className="font-bold text-2xl text-[#1ABC9C]">$200</span> per Day
+            <span className="font-bold text-xl sm:text-2xl text-[#1ABC9C]">$200</span> per Day
           </p>
 
           <Link href="/login">
             <button
-              className="bg-[#3252DF] text-white font-medium px-5 py-3 rounded-md hover:bg-[#152C5B] transition duration-300 ease-in-out w-full"
+              className="bg-[#3252DF] text-white font-medium px-4 sm:px-5 py-2.5 sm:py-3 rounded-md hover:bg-[#152C5B] transition duration-300 ease-in-out w-full text-sm sm:text-base"
               type="submit"
             >
               Book Now
@@ -109,7 +109,7 @@ const DetailsPage = () => {
       </div>
 
       {/* Features */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6 justify-items-center px-4 sm:px-8 md:px-16 py-10">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 sm:gap-5 md:gap-6 justify-items-center px-4 sm:px-6 md:px-8 lg:px-16 py-8 md:py-10">
         {[
           { icon: "/icons/bedroom.svg", label: "bedroom", value: 1 },
           { icon: "/icons/ic_livingroom.svg", label: "living room", value: 1 },
@@ -121,8 +121,8 @@ const DetailsPage = () => {
           { icon: "/icons/ic_tv.svg", label: "television", value: 2 },
         ].map((item, index) => (
           <div key={index} className="flex flex-col items-center text-center gap-2">
-            <img src={item.icon} alt={item.label} className="w-6 h-6" />
-            <p className="text-sm">
+            <img src={item.icon} alt={item.label} className="w-5 h-5 sm:w-6 sm:h-6" />
+            <p className="text-xs sm:text-sm">
               <span className="font-bold text-[#152C5B]">{item.value}</span> {item.label}
             </p>
           </div>
@@ -130,12 +130,12 @@ const DetailsPage = () => {
       </div>
 
       {/* Treasures Section */}
-      <div className="p-8 md:p-12 mb-20">
-        <h2 className="text-lg font-semibold text-blue-900 mb-6 px-4 sm:px-8 md:px-16">
+      <div className="p-6 sm:p-8 md:p-12 mb-20">
+        <h2 className="text-base sm:text-lg font-semibold text-blue-900 mb-6 px-4 sm:px-6 md:px-8 lg:px-16">
           Treasure to Choose
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4 sm:px-8 md:px-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 md:px-8 lg:px-16">
           {treasures.map((item) => (
             <div
               key={item.id}
