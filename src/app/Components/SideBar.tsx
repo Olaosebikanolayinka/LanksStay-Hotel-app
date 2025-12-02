@@ -9,6 +9,7 @@ import {
   MessageCircle,
   HelpCircle,
   Settings,
+  LogOut,
   X,
 } from "lucide-react";
 import Link from "next/link";
@@ -23,15 +24,16 @@ const SideBar = ({ isOpen, toggleSidebar }: SidebarProps) => {
   const pathname = usePathname();
 
   const menuItems = [
+    { name: "Home", icon: Home, href: "/" }, // go back to home link
     { name: "Dashboard", icon: Home, href: "/dashboard" },
     { name: "Users", icon: Users, href: "/users" },
     { name: "Hotel Owners", icon: Hotel, href: "/hotel-owners" },
-    { name: "Booking Details", icon: Book, href: "../bookingdocument" },
+    { name: "Booking Details", icon: Book, href: "/bookingdocument" },
     { name: "Refund", icon: RefreshCw, href: "/refund" },
     { name: "Message", icon: MessageCircle, href: "/messages" },
     { name: "Help", icon: HelpCircle, href: "/help" },
     { name: "Setting", icon: Settings, href: "/settings" },
-    
+    { name: "Logout", icon: LogOut, href: "/" }
   ];
 
   return (

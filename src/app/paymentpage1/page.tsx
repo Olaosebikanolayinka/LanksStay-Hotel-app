@@ -82,13 +82,13 @@ const BookingPage = () => {
     </div>
 
     <div className="mt-8 md:mt-10 flex flex-col items-center space-y-3 px-4 pb-8">
-        <Link href="../paymentpge2" className='w-full'>
-        <Button title='Book Now' type='submit' className='w-full' />
-         </Link>
 
-         <Link href="../bookingdocument" className='w-full'>
-       <button className='w-full bg-[#F5F6F8] text-[#B3B3B3] font-medium px-4 sm:px-5 py-2 sm:py-2.5 rounded-md hover:bg-gray-500 hover:text-white transition duration-300 ease-in-out text-sm'>Cancel</button>
-       </Link>
+        <Button title='Book Now' type='submit'  href="../paymentpge2"/>
+       
+
+      
+       <a href="../bookingdocument"><button className=' bg-[#F5F6F8] text-[#B3B3B3] font-medium px-4 sm:px-5 py-2 sm:py-2.5 rounded-md hover:bg-gray-500 hover:text-white transition duration-300 ease-in-out text-sm' >Cancel</button></a>
+      
     </div>
     </div>
           

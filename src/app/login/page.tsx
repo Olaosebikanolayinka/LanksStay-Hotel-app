@@ -1,7 +1,9 @@
 "use client";
 
+import React from 'react';
 import { useState } from "react";
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import InputField from "../components/Inputfield";
 import { Eye, EyeOff} from "lucide-react";
 import Modal from "../components/Modal";
@@ -10,6 +12,7 @@ import AccountCreated from "../components/AccountCreated";
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-50 px-4 sm:px-6 lg:px-20 py-10">
@@ -65,7 +68,7 @@ const LoginPage = () => {
             </p>
             
             <div className="space-y-3">
-              <button onClick={() => setModalOpen(true)} className="w-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 sm:py-3 rounded-md transition">
+              <button type="button" onClick={() => router.push('/dashboard')} className="w-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 sm:py-3 rounded-md transition">
                 Login
               </button>
 
@@ -75,9 +78,6 @@ const LoginPage = () => {
             </div>
           </form>
 
-          <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
-            <AccountCreated />
-          </Modal>
 
           
           
